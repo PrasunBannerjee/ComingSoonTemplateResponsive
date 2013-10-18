@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booting Soon - Responsive Coming Soon Page with signup</title>
+<meta name="description" content="The awesome bootstrap powered responsive coming soon landing page with signup/subscribe to email facility for your website" />
+<meta name="keywords" content="Twitter Bootstrap, Coming soon page, landing page, launching page, mobile friendly, themeforest, html5, subscribe to email" />
+<meta name="rating" content="general" />
+<meta name="robots" content="index,follow" />
+
+    
+ 
+
+ <link rel="shortcut icon" href="favicon.ico">
+   
+    <link href="css/booting-soon.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Lily+Script+One' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+
+    <br><br><br><br>
+    <div class="container">
+<br><br><br><br>
+      <div class="starter-template">
+     <center><div id="logo"><img src="images/logo-welcome.png" alt="Welcome Logo" class="img-responsive"/></div><center>
+<div id="material">        <h1>Hang on!</h1>
+        <p class="lead">Yes, you're right, something is cooking inside. Care to check back again in a while?</p>
+        
+        <form class="form-inline" role="form" method="post" action="submit.php" id="formwa">
+  <div class="form-group">
+    <label class="sr-only" for="name">Your Name</label>
+    <input type="text" class="form-control" name="name" id="name" placeholder="Your name here">
+  </div>
+
+  <div class="form-group">
+    <label class="sr-only" for="email">Email address</label>
+    <input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
+  </div>
+  <button type="submit" class="btn btn-warning">Keep me Updated!</button>
+</form>
+<br>
+<p>       Or just Stay tuned and <strong>subscribe to our latest updates</strong> for the earliest knowledge of news from us</p></div>
+
+
+
+      </div>
+
+    </div><!-- /.container -->
+
+
+    <!-- core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" > </script>
+
+<script src="js/jquery.validate.min.js" > </script>
+
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+ <script>
+$(document).ready(function () {
+$('#material').slideDown(1200);
+ $('#logo').hide().delay(900).effect("bounce", { direction:'down', times: 5 }, 1000);
+$('#material').show("highlight");
+$('#formwa').hide().delay(1800).fadeIn(850);
+ 
+       });
+</script>
+
+
+<script>
+$(document).ready(function(){
+  
+ $('#formwa').validate(
+ {
+  rules: {
+    name: {
+      minlength: 2,
+      required: true
+    },
+    email: {
+      required: true,
+      email: true
+    }
+  },
+  highlight: function(element) {
+    $(element).closest('.control-group').removeClass('success').addClass('error');
+  },
+  success: function(element) {
+    element
+    .text('OK!').addClass('valid')
+    .closest('.control-group').removeClass('error').addClass('has-success');
+  }
+ });
+}); // end document.ready
+ 
+</script>
+
+
+   </body>
+</html>
